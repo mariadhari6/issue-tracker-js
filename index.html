@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Issue Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body>
+
+<body onload="fetchIssue()">
+    <div class="container">
+        <h1>JS Issue Tracker <small>by Mar'i Adhari</small></h1>
+        <div class="jumbotron">
+            <h3>Add new Issue:</h3>
+            <form id="issueForm">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" class="form-control"
+                        placeholder="Describe the issue ...">
+                </div>
+                <div class="form-group">
+                    <label for="severity">Severity</label>
+                    <select name="severity" id="severity" class="form-control">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-goup">
+                    <label for="assign">Assign To</label>
+                    <input type="text" name="assign" id="assign" class="form-control"
+                        placeholder="Enter responsible ...">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 0.7rem;">Add</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="issuesList"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy https://github.com/mariadhari6</p>
+        </div>
+    </div>
     <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="http://chancejs.com/chance.min.js"></script>
 </body>
+
 </html>
